@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa|Noto+Sans"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="prism.css"
+    />
+    <script src="prism.js"></script>
+  </head>
+  <nav id="navbar">
+    <header id="main-header"><br /><b>Javascript Diary</b><br /></header>
+    <ul>
+      <a class="nav-link" rel="internal" href="#About"><li>About</li></a>
+      <a class="nav-link" rel="internal" href="#factorial_algorithm"
+        ><li>Factorial Algorithm</li></a
+      >
+      <a
+        class="nav-link"
+        rel="internal"
+        href="#finding_the_longest_word_in_a_sentence"
+        ><li>Finding the Longest Word in a Sentence</li></a
+      >
+      <a class="nav-link" rel="internal" href="#3_The_Static_Conception_of_Jazz"
+        ><li>The Static Conception of Jazz</li></a
+      >
+      <a
+        class="nav-link"
+        rel="internal"
+        href="#4_The_Dynamic_Conception_of_Jazz"
+        ><li>The Dynamic Conception of Jazz</li></a
+      >
+      <a
+        class="nav-link"
+        rel="internal"
+        href="#5_Forming_a_New_Definition_of_Jazz"
+        ><li>Forming a New Definition of Jazz</li></a
+      >
+      <a class="nav-link" rel="internal" href="#Bibliography"
+        ><li>Bibliography</li></a
+      >
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="About">
+      <header>About</header>
+      <article></article>
+    </section>
+    <section class="main-section" id="factorial_algorithm">
+      <header>Factorial Algorithm</header>
+      <article>
+        <p>
+          While creating factorial algorithm, biggest roadblock was in not
+          recognising that the formula was trying to multiply by 0 so the result
+          kept coming back as NaN. The solution was to take the number that was
+          to be factorised, create an array from 1 to that number, and then
+          create a for loop:
+        </p>
+        <br>
+        <pre><code class="language-javascript">
+                let sum = 0;
+                for (let i = 0; i &lt; arr.length; i++) {
+                        sum = sum * arr[i];
+                    }
+        </code></pre>
+        <br>
+        <p>
+          My first attempt to run this loop was unsuccessful and kept returning 0. 
+          That's because I didn't acknowledge the fact that starting the loop at 0 
+          means that the sum will never be larger than 0 because every time we are 
+          multiplying by 0. So I fixed the problem by changing the default value of 
+          <span class='code-bit-var'>sum</span> to 1, and the default value of 
+          <span class='code-bit-var'>i</span> in the for loop that created the 
+          initial array to 1.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="finding_the_longest_word_in_a_sentence">
+      <header>Finding the Longest Word in a Sentence</header>
+      <article>
+        <p>
+          The first part of the problem was to convert the string into an array of
+          words. For this I used the split() method, giving &quot; &quot; as the
+          splitting parameter. I then had to find a way to get the lengths of
+          each string in this array. I thought that the length property only
+          worked on arrays, so spent a lot of time trying to figure out how to
+          convert the strings in the array to separate characters in a sub-array
+          which was super messy and confusing. It turns out you <em>can</em> use the
+          length property to just get the length of a string.
+        </p>
+        <p>
+          The second part of the challenge is to figure out a way to compare the
+          numbers in the newly created strLenArr to find the largest one. At
+          first I thought this would be simple, but am struggling to come up
+          with a solution on my own.
+        </p>
+        <p>
+          Turns out it <em>was</em> simple! It's just a matter of creating an if 
+          statement in a for loop. The for loop runs through each element in the array 
+          and the if statement checks if that element is higher than the number stored 
+          in the variable <span class='code-bit-var'>highest</span>. 
+          <span class='code-bit-var'>highest</span> is set to 0 by default so the first 
+          number encountered in the for loop becomes the new value for 
+          <span class='code-bit-var'>highest</span>. Each time the for loop iterates, 
+          the if statement checks the value of the current element in the array
+          against <span class='code-bit-var'>highest</span>. If it's higher, it will
+          become the new value for <span class='code-bit-var'>highest</span>.
+        </p><br>
+        <pre><code class="language-javascript">
+                function findLongestWordLength(str) {
+                    const splitStr = str.split(" ");
+                    let strLenArr = [];
+                    for (let i=0; i&lt;splitStr.length; i++){
+                      strLenArr.push(splitStr[i].length)
+                    }
+                  
+                    let highest = 0;
+                  
+                    for (let j=0; j&lt;strLenArr.length; j++){
+                      if(strLenArr[j]>highest){
+                        highest=strLenArr[j];
+                        }
+                      }
+                  
+                    console.log(highest)
+                    return str.length;
+                  }
+                  
+                  findLongestWordLength("The quick brown fox jumped over the lazy dog");
+        </code></pre><br>
+      </article>
+    </section>
+    <section class="main-section" id="3_The_Static_Conception_of_Jazz">
+      <header>3 The Static Conception of Jazz</header>
+      <article>
+            article
+      </article>
+    </section>
+    <section id="4_The_Dynamic_Conception_of_Jazz" class="main-section">
+      <header>4 The Dynamic Conception of Jazz</header>
+      <article>
+            article
+      </article>
+    </section>
+    <section id="Bibliography" class="main-section">
+      <header>Bibliography</header>
+      <article>
+        <ul style="list-style: none; line-height: 2em;"></ul>
+      </article>
+    </section>
+  </main>
+</html>
