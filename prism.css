@@ -156,3 +156,9 @@ pre[class*="language-"] {
 	background-color: #ecf1f8;
 }
 
+.code-bit-func {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	color: #001799;
+	background-color: #ecf1f8;
+}
+
