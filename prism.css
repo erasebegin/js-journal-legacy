@@ -66,7 +66,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
-	margin: .5em 0;
+	margin: 2em 2em;
 	overflow: auto;
 	border-radius: 0.3em;
 }
@@ -150,13 +150,13 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-.code-bit-var {
+.code-var {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	color: #859900;
 	background-color: #ecf1f8;
 }
 
-.code-bit-func {
+.code-func {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	color: #001799;
 	background-color: #ecf1f8;

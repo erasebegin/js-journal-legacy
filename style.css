@@ -2,6 +2,10 @@ html {
   font-family: "Noto Sans", sans-serif;
   background-color: rgb(232, 230, 253);
 }
+
+main {
+  width: 70%;
+}
 #navbar {
   position: fixed;
   min-width: 290px;
@@ -21,16 +25,19 @@ header {
   text-align: center;
   font-size: 1.8em;
   font-weight: thin;
+  border-top: 1px solid rgb(0, 0, 22);
+  padding-top: 50px;
 }
+
 #main-doc header {
   text-align: left;
-  margin: 0px auto 40px 40px;
+  margin: 0px auto 40px 20px;
 }
 
 article {
-  margin-left: 40px;
-  margin-right: 20px;
-  margin-bottom: 100px;
+  display: fixed;
+  margin: 0px 50px 50px 20px;
+  width: 100%;
 }
 
 #main-header {
@@ -85,6 +92,13 @@ blockquote {
   border-bottom: 2px solid rgb(223, 221, 243);
   width: 40%;
 } 
+
+.scrn-cap {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(241, 220, 253)
+}
 
 @media only screen and (max-width: 600px) {
 

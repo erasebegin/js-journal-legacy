@@ -6,10 +6,7 @@
       href="https://fonts.googleapis.com/css?family=Comfortaa|Noto+Sans"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="prism.css"
-    />
+    <link rel="stylesheet" href="prism.css" />
     <script src="prism.js"></script>
   </head>
   <nav id="navbar">
@@ -28,20 +25,20 @@
       <a class="nav-link" rel="internal" href="#return_largest_numbers"
         ><li>Return Largest Numbers From Two-Dimensional Array</li></a
       >
-      <a
-        class="nav-link"
-        rel="internal"
-        href="#return_largest_numbers"
-        ><li>The Dynamic Conception of Jazz</li></a
+      <a class="nav-link" rel="internal" href="#confirm_the_ending"
+        ><li>Confirm the Ending</li></a
       >
-      <a
-        class="nav-link"
-        rel="internal"
-        href="#5_Forming_a_New_Definition_of_Jazz"
-        ><li>Forming a New Definition of Jazz</li></a
+      <a class="nav-link" rel="internal" href="#repeat_string"
+        ><li>Repeat String</li></a
       >
-      <a class="nav-link" rel="internal" href="#Bibliography"
-        ><li>Bibliography</li></a
+      <a class="nav-link" rel="internal" href="#truncate_string"
+        ><li>Truncate a String</li></a
+      >
+      <a class="nav-link" rel="internal" href="#find_element_in_array"
+        ><li>Find an Element in an Array</li></a
+      >
+      <a class="nav-link" rel="internal" href="#check_boolean_literals"
+        ><li>Checking for Boolean Literals</li></a
       >
     </ul>
   </nav>
@@ -49,9 +46,11 @@
     <section class="main-section" id="About">
       <header>About</header>
       <article>
-        <br>
-        A log of the thought processes I have been through and solutions I have come to in trying to solve javascript problems.
-        <br>
+        <br />
+        A log of the thought processes I have been through and solutions I have
+        come to in trying to solve the javascript problems provided by
+        <a href="http://www.freecodecamp.org">FreeCodeCamp</a>.
+        <br />
       </article>
     </section>
     <section class="main-section" id="factorial_algorithm">
@@ -62,24 +61,26 @@
           recognising that the formula was trying to multiply by 0 so the result
           kept coming back as NaN. The solution was to take the number that was
           to be factorised, create an array from 1 to that number, and then
-          create a <span class='code-bit-func'>for</span>  loop:
+          create a <span class="code-func">for</span> loop:
         </p>
-        <br>
-        <pre><code class="language-javascript">
+        <br />
+        <pre><code class='language-javascript'>
                 let sum = 0;
                 for (let i = 0; i &lt; arr.length; i++) {
                         sum = sum * arr[i];
                     }
         </code></pre>
-        <br>
+        <br />
         <p>
-          My first attempt to run this loop was unsuccessful and kept returning 0. 
-          That's because I didn't acknowledge the fact that starting the loop at 0 
-          means that the sum will never be larger than 0 because every time we are 
-          multiplying by 0. So I fixed the problem by changing the default value of 
-          <span class='code-bit-var'>sum</span> to 1, and the default value of 
-          <span class='code-bit-var'>i</span> in the <span class='code-bit-func'>for</span> loop that created the 
-          initial array to 1.
+          My first attempt to run this loop was unsuccessful and kept returning
+          0. That's because I didn't acknowledge the fact that starting the loop
+          at 0 means that the sum will never be larger than 0 because every time
+          we are multiplying by 0. So I fixed the problem by changing the
+          default value of
+          <span class="code-var">sum</span> to 1, and the default value of
+          <span class="code-var">i</span> in the
+          <span class="code-func">for</span> loop that created the initial array
+          to 1.
         </p>
       </article>
     </section>
@@ -87,14 +88,14 @@
       <header>Finding the Longest Word in a Sentence</header>
       <article>
         <p>
-          The first part of the problem was to convert the string into an array of
-          words. For this I used the split() method, giving &quot; &quot; as the
-          splitting parameter. I then had to find a way to get the lengths of
-          each string in this array. I thought that the length property only
+          The first part of the problem was to convert the string into an array
+          of words. For this I used the split() method, giving &quot; &quot; as
+          the splitting parameter. I then had to find a way to get the lengths
+          of each string in this array. I thought that the length property only
           worked on arrays, so spent a lot of time trying to figure out how to
           convert the strings in the array to separate characters in a sub-array
-          which was super messy and confusing. It turns out you <em>can</em> use the
-          length property to just get the length of a string.
+          which was super messy and confusing. It turns out you <em>can</em> use
+          the length property to just get the length of a string.
         </p>
         <p>
           The second part of the challenge is to figure out a way to compare the
@@ -103,20 +104,25 @@
           with a solution on my own.
         </p>
         <p>
-          Turns out it <em>was</em> simple! It's just a matter of creating an <span class='code-bit-func'>if</span>  
-          statement in a for loop. The <span class='code-bit-func'>for</span> loop runs through each element in the array 
-          and the <span class='code-bit-func'>if</span>  statement checks if that element is higher than the number stored 
-          in the variable <span class='code-bit-var'>highest</span>. 
-          <span class='code-bit-var'>highest</span> is set to 0 by default so the first 
-          number encountered in the <span class='code-bit-func'>for</span>  loop becomes the new value for 
-          <span class='code-bit-var'>highest</span>. Each time the for loop iterates, 
-          the <span class='code-bit-func'>if</span>  statement checks the value of the current element in the array
-          against <span class='code-bit-var'>highest</span>. If it's higher, it will
-          become the new value for <span class='code-bit-var'>highest</span>.
-        </p><br>
-        <pre><code class="language-javascript">
+          Turns out it <em>was</em> simple! It's just a matter of creating an
+          <span class="code-func">if</span> statement in a <span class='code-func'>for</span> loop. The
+          <span class="code-func">for</span> loop runs through each element in
+          the array and the <span class="code-func">if</span> statement checks
+          if that element is higher than the number stored in the variable
+          <span class="code-var">highest</span>.
+          <span class="code-var">highest</span> is set to 0 by default so the
+          first number encountered in the
+          <span class="code-func">for</span> loop becomes the new value for
+          <span class="code-var">highest</span>. Each time the <span class='code-func'>for</span> loop
+          iterates, the <span class="code-func">if</span> statement checks the
+          value of the current element in the array against
+          <span class="code-var">highest</span>. If it's higher, it will become
+          the new value for <span class="code-var">highest</span>.
+        </p>
+        <br />
+        <pre><code class='language-javascript'>
                 function findLongestWordLength(str) {
-                    const splitStr = str.split(" ");
+                    const splitStr = str.split(' ');
                     let strLenArr = [];
                     for (let i=0; i&lt;splitStr.length; i++){
                       strLenArr.push(splitStr[i].length)
@@ -134,18 +140,21 @@
                     return str.length;
                   }
                   
-                  findLongestWordLength("The quick brown fox jumped over the lazy dog");
-        </code></pre><br>
+                  findLongestWordLength('The quick brown fox jumped over the lazy dog');
+        </code></pre>
+        <br />
       </article>
     </section>
     <section class="main-section" id="return_largest_numbers">
       <header>Return Largest Numbers From Two-Dimensional Array</header>
       <article>
-        Bearing some resemblance to the previous problem where the longest string had to 
-        be found, this problem is somewhat more complex since the array is 2-dimensional, 
-        which means that I will probably have to use a nested <span class='code-bit-func'>for</span> loop to access the sub-arrays.
+        Bearing some resemblance to the previous problem where the longest
+        string had to be found, this problem is somewhat more complex since the
+        array is 2-dimensional, which means that I will probably have to use a
+        nested <span class="code-func">for</span> loop to access the sub-arrays.
 
-        <br><br><pre><code class="language-javascript">
+        <br /><br />
+        <pre><code class='language-javascript'>
           function largestOfFour(arr) {
             let newArr=[];
             for(let i=0; i&lt;arr.length; i++){
@@ -157,39 +166,53 @@
           }
           
           largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
-        </code></pre><br> 
+        </code></pre>
+        <br />
 
-        I created <span class='code-bit-var'>newArr</span>  to store the highest number in each sub-array. I created the nested for 
-        loop, but am not sure what to do with it. currently it just returns every number in every 
-        sub-array in a row. I need there to be a break between looping through sub-arrays so that 
-        my if statement is not looking for the highest number across all sub-arrays. I will go and 
-        look at some examples of nested <span class='code-bit-func'>for</span>  loops to see if anything looks useful. 
-        <br><br>
-        I guess I'm looking for a way to break out of the inner loop when the highest number in that 
-        sub-array is found. So perhaps putting an <span class='code-bit-func'>if</span>  statement there will accomplish this.
-        <br><br>
-        I feel like I'm getting closer. I realised that to exit the inner loop there just needs to 
-        be something returned from an <span class='code-bit-func'>if</span>  statement. I've added an <span class='code-bit-func'>else if</span> condition to try and stop 
-        the loop from continuing to push to <span class='code-bit-var'>num</span> if it passes.... okay .... that's dumb. I don't think 
-        that part makes sense actually.
-        <br><br>
-        The inner for loop is fine, I just need to somehow push <span class='code-bit-var'>num</span> to <span class='code-bit-var'>newArr</span>  when the inner (j) 
-        loop finishes executing.
-        <br><br>
-        What if I add another <span class='code-bit-func'>if</span>  statement to the inner loop... No... an OR condition in the of 
-        statement that says 'if the inner loop has reached the length of the array, push <span class='code-bit-var'>num</span> to 
-        the new array...'<br><br>
+        I created <span class="code-var">newArr</span> to store the highest
+        number in each sub-array. I created the nested <span class='code-func'>for</span> loop, but am not sure
+        what to do with it. currently it just returns every number in every
+        sub-array in a row. I need there to be a break between looping through
+        sub-arrays so that my if statement is not looking for the highest number
+        across all sub-arrays. I will go and look at some examples of nested
+        <span class="code-func">for</span> loops to see if anything looks
+        useful. <br /><br />
+        I guess I'm looking for a way to break out of the inner loop when the
+        highest number in that sub-array is found. So perhaps putting an
+        <span class="code-func">if</span> statement there will accomplish this.
+        <br /><br />
+        I feel like I'm getting closer. I realised that to exit the inner loop
+        there just needs to be something returned from an
+        <span class="code-func">if</span> statement. I've added an
+        <span class="code-func">else if</span> condition to try and stop the
+        loop from continuing to push to <span class="code-var">num</span> if it
+        passes.... okay .... that's dumb. I don't think that part makes sense
+        actually. <br /><br />
+        The inner <span class='code-func'>for</span> loop is fine, I just need to somehow push
+        <span class="code-var">num</span> to
+        <span class="code-var">newArr</span> when the inner (j) loop finishes
+        executing. <br /><br />
+        What if I add another <span class="code-func">if</span> statement to the
+        inner loop... No... an OR condition in the of statement that says 'if
+        the inner loop has reached the length of the array, push
+        <span class="code-var">num</span> to the new array...'<br /><br />
         Not quite right but along the right lines...
-        <br><br>
-        Actually yes, two <span class='code-bit-func'>if</span>  statements in the inner loop. The first checks if the number in the 
-        sub-array is larger than num, then updates <span class='code-bit-var'>num</span> with that number. The second if statement 
-        checks if the loop has reached the end of the sub-array. But I can't think of a way to track 
-        the progress of the loop unless I add a<span class='code-bit-var'>count</span> er to the first <span class='code-bit-func'>if</span>  statement: <span class='code-bit-var'>count++</span>. This 
-        will iterate a variable in the outer loop that will reset each time the inner loop finishes 
-        executing. So the second <span class='code-bit-func'>if</span>  statement will compare the number stored in <span class='code-bit-var'>count</span>  to the length 
-        of the array. If they are the same, then push <span class='code-bit-var'>num</span> to <span class='code-bit-var'>newArr</span> .
-
-        <br><br><pre><code class="language-javascript">
+        <br /><br />
+        Actually yes, two <span class="code-func">if</span> statements in the
+        inner loop. The first checks if the number in the sub-array is larger
+        than num, then updates <span class="code-var">num</span> with that
+        number. The second if statement checks if the loop has reached the end
+        of the sub-array. But I can't think of a way to track the progress of
+        the loop unless I add a<span class="code-var">count</span> er to the
+        first <span class="code-func">if</span> statement:
+        <span class="code-var">count++</span>. This will iterate a variable in
+        the outer loop that will reset each time the inner loop finishes
+        executing. So the second <span class="code-func">if</span> statement
+        will compare the number stored in <span class="code-var">count</span> to
+        the length of the array. If they are the same, then push
+        <span class="code-var">num</span> to
+        <span class="code-var">newArr</span> <br /><br />
+        <pre><code class='language-javascript'>
         function largestOfFour(arr) {
           let newArr = [];
           for(let i=0; i&lt;arr.length; i++){
@@ -209,30 +232,452 @@
         }
         
         largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]);
+        </code></pre>
+        <br /><br />
+
+        So close now! This returns the correct array for most inputs, but if the
+        inputs are negative numbers it fails because the
+        <span class="code-func">if</span> statement is comparing to 0.
+        <br /><br />
+        Ideally, instead of comparing the element in the sub-array at [i][j] to
+        a standalone variable outside the loop, I would compare it to the last
+        number that has just been passed so that the reference for size is not
+        fixed at 0 to begin with. But this seems quite beyond me at this point
+        in time and I think its time to move on so I will just set
+        <span class="code-var">num</span> to a very low negative number. That
+        should take care of the problem, but is a cop-out for sure. I hope to
+        return to this problem one day better-equipped to truly solve it.
+      </article>
+    </section>
+    <section id="confirm_the_ending" class="main-section">
+      <header>Confirm the Ending</header>
+      <article>
+        Well this looks like a toughie. I need to take a string variable and a
+        target variable and see if target appears at the end of the string. I am
+        told that this can be solved with the
+        <span class="code-func">endsWith()</span>
+        method introduced in ES2015, but that I shouldn't use it. I must instead
+        use substring methods to solve this puzzle.
+        <br /><br />
+        I want to try and turn both the string and target variables into arrays,
+        but something tells me that would be quite a rabbit hole to go down. I
+        will instead look at working with only strings and see how far I get.
+        <br /><br />
+        After looking here for a list of string methods, I bumped into an old
+        friend. <span class="code-func">indexOf()</span> can be used to find the
+        start and end position of <span class="code-var">target</span> in the
+        string. Could I just ask for the index of
+        <span class="code-var">target</span>, and then if it is not found,
+        return <span class="code-var">false</span>? Could it be that easy? Let's
+        see. <br /><br />
+        <pre><code class='language-javascript'>
+          function confirmEnding(str, target) {
+            if(str.indexOf(target)==true){
+              str=true;
+            }else{
+            return false};
+          
+             str=false;
+          }
+          
+          confirmEnding('Bastian', 'n');
+        </code></pre>
+        <br /><br />
+        Kind of embarrassing code. Just thought I'd see… so I guess
+        <span class="code-func">str.indexOf(target)</span> will not directly
+        give true or false if there is a match. So let's try a longer way.
+        <br /><br />
+        <pre><code class='language-javascript'>
+          function confirmEnding(str, target) {
+            const slicer = str.slice(str.indexOf(target));
+            if(slicer==target){
+              return true;
+            }else{
+              return false;
+            }
+          }
+          
+          confirmEnding('Bastian', 'n');
+        </code></pre>
+        <br /><br />
+        This was my next idea, and I'm really surprised that it worked. The idea
+        that I sort of fumbled my way towards is that
+        <span class="code-var">slicer</span> would attempt to isolate the target
+        part of <span class="code-var">str</span>, and if it failed to do so….
+        <br />wait, what?? Why does this code even work. According to the
+        FreeCodeCamp checker I have passed all but one of the tests with this
+        code….. <br /><br />
+        <img
+          src="https://i811.photobucket.com/albums/zz39/EraseBegin/ffc-checks.png"
+          class="scrn-cap"
+          width="700"
+          height="600"
+        />
+        <br /><br />
+        This function is ridiculous... how is it passing all of these tests? It
+        isn't even checking if the target is appearing on the end of the string.
+        So why would ('Open sesame','pen') return false while ('Bastian', 'n')
+        returns true.... and then ('Congratulation', 'on') returns false.....
+        With the 3rd example I guess the difference is that the target substring
+        appears twice. But if I don't understand how this function is working
+        now, I can't go about improving it.
+        <br /><br />
+        I went away and looked at that list of string methods again. Just below
+        <span class="code-func">indexOf</span> I found
+        <span class="code-func">lastIndexOf</span>. I still don't quite
+        understand how this formula works, but I thought surely if I just
+        replace <span class="code-func">indexOf</span> with
+        <span class="code-func">lastIndexOf</span> it would fix the problem I
+        was having with finding duplicate substrings. Sure enough that did the
+        trick. Still not quite sure why this works, but it does! On to the next
+        challenge!
+      </article>
+    </section>
+    <section id="repeat_string" class="main-section">
+      <header>Repeat String</header>
+      <article>
+        The challenge: take a string and a number and repeat the string that
+        number of times. An empty string must be returned if the number is less
+        than 0. I really can't see this being much of a problem. First I'll want
+        to check it the number is 0 or more, so I'll open with an
+        <span class="code-var">if</span>
+        statement. If that condition is met then perhaps I can use a
+        <span class="code-var">for</span> loop along with the
+        <span class="code-func">concat()</span> method to create the new string.
+        The <span class="code-var">else</span>
+        statement will create an empty string. Let's see how that pans out.
+        <br /><br />
+        <pre><code class='language-javascript'>
+          function repeatStringNumTimes(str, num) {
+            if(num>0){
+              for(let i=0; i==num; i++){
+                str = str.concat(str);
+              } 
+              console.log(str)
+            }else{
+              return ' '
+            }
+          }
+
+          repeatStringNumTimes('abc', 3);
+        </code></pre>
+        <br /><br />
+        So this is what I tried, but I am stumped. I can see that there is a
+        problem with the logic in the
+        <span class="code-var">for</span> loop, but can't put my finger on it.
+        One problem is that <span class="code-var">str</span> is resetting every
+        time the loop is run. But I don't think I could make the loop iterate
+        the string variable since I'm not sure logical operators can be used on
+        strings. I think I'm just going to try going the array route instead of
+        concatenation. So the <span class='code-func'>for</span> loop will push the string to an array
+        <span class="code-var">num</span> times. I can then hopefully convert
+        the array back to a string using the
+        <span class="code-func">toString()</span> method. <br /><br />
+        Swapped out the guts, but it's not working... don't think it's something
+        as simple as a syntax error.
+        <br /><br />
+        <pre><code class='language-javascript'>
+          function repeatStringNumTimes(str, num) {
+            let arr = [];
+            if(num>=0){
+              for(let i=0; i==num; i++){
+                arr.push(str);
+              }
+              return arr.toString();    
+            }else{
+              return ' '
+            }
+          }
+          
+          repeatStringNumTimes('abc', 3);
+        </code></pre>
+        <br /><br />
+        Okay weird. So I can't use <span class="code-var">i==num</span> as the
+        condition for ending the loop. Not too sure why. Anyway, changed it to
+        <span class="code-var">i&lt;num</span> and everything seems to be
+        working. It's still not passing the tests however since the output is
+        comma separated. Had a quick search and it seems I can use the
+        <span class="code-func">join()</span> method to create a string without
+        any separators. <br /><br />
+        Bingo! That's it! There's probably a better way to solve this, but this
+        will do for now.
+      </article>
+    </section>
+    <section id="truncate_string" class="main-section">
+      <header>Truncate a String</header>
+      <article>
+        <p>
+          The task is to take a string and a number as inputs and return a
+          string that is truncated to the index of that number. Then the final
+          result should append an ellipse… It looked super simple at first and,
+          as I suspected, it is.
+        </p>
+        <pre><code class="language-javascript">function truncateString(str, num) {
+            let truncated = str.slice(0, num);  
+            return truncated + '...';
+          }
+          
+          truncateString("A-tisket a-tasket A green and yellow basket", 8);
+          </code></pre>
+        <p>
+          This passes almost all the tests, but the folks at FCC have thrown in
+          a little curve ball:
+        </p>
+        <p>
+          <img
+            src="https://i811.photobucket.com/albums/zz39/EraseBegin/fcc-2.png"
+            alt="fcc-checks2"
+            class='scrn-cap'
+          />
+        </p>
+        <p>
+          After looking at this a while, I think it’s actually a massive
+          curve-ball. How on earth…?<br />
+          I guess <span class='code-func'>slice()</span> can’t
+          take such a complex argument, but I don’t know how to add a step that
+          simplifies the argument. I tried simply assigning num to a new
+          variable, but that didn’t do it. The new variable would just contain
+          the same level of complexity. So how do I ‘resolve’ this argument
+          before I pass it to <span
+          class='code-func'>slice()</span>?
+        </p>
+        <p>
+          I guess I’ll try logging the outputs to try and see what’s going on.
+          The console output is exactly what the checks are looking for…
+        </p>
+        <p>
+          Oh! I misread the specification. It is not all outputs that should
+          have an ellipse appended. For outputs that have the same length as the
+          inputted string there should be no ellipse. This should be easy to
+          fix.<br />
+          Hmmm, added an if/else statement, but the output is still incorrect.
+        </p>
+        <pre><code class="language-javascript">
+          function truncateString(str, num) {
+            let truncated = str.slice(0, num); 
+            if(truncated==str.length){
+              console.log(truncated) 
+              return truncated;
+            }else{
+              console.log(truncated + '...') 
+                return truncated + '...';
+            }
+          }
+          
+          truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+          
+          </code></pre>
+        <p>
+          Okay so a minor alteration. I had to get truncated out of the if
+          statement. I should be comparing str to num directly, not comparing
+          the sliced entity. And, given the code tests, I should be looking for
+          lengths equal to or greater than <span class='code-var'>str.length</span>, not just equal to.
+        </p>
+      </article>
+    </section>
+    <article>
+      <section>
+        <header id='find_element_in_array' class='main-section'>Find an Element in an Array</header>
+
+        Here is the premise this time: the function takes 2 arguments. The first is an array, and the second is a function. My function must use the function in the second argument as a truth test for each element in the array. The function will return the first element in the array that passes the test. If none return true, then the function returns undefined. This is the template provided:
+        
+        <pre><code class="language-javascript">
+        
+        function findElement(arr, func) {
+          let num = 0;
+          return num;
+        }
+        
+        findElement([1, 2, 3, 4], num => num % 2 === 0);
+        
+        </pre></code>
+        
+        I plan to make a <span class='code-func'>for</span> loop of course to move through the array. Within the <span class='code-func'>for</span> loop I could create an if statement that applies the test to each element in the array. Let's give it a go!
+        <br><br>
+        <b>1 hour later</b>
+        <br><br>
+        Uhhh...... stumped pretty early on here. 
+        
+        <pre><code class="language-javascript">
+        
+        function findElement(arr, func) {
+          for(i=0; i&lt;arr.length; i++){
+            console.log(func(arr[i]))
+          }
+          let num = 0;
+          return num;
+        }
+        
+        findElement([1, 2, 3, 4], num => num % 2 === 0);
+        
+        </pre></code>
+        Tried logging the output of the function as it is passed each number in the array, but didn't get any output. One of the biggest challenges here is dealing with a function as an argument. I'm not sure how to handle it. This one has me truly stumped. Not sure what to search, not sure what to change, not sure what to log. I will leave some time to digest this and come back to it later. 
+        <br><br>
+        I give up, I'm going to peek at the clues. First clue: use a <span class='code-func'>for</span> loop to cycle through the array. Okay, done. Second clue: "<span class='code-var'>num</span> is passed to the function. We will need to set it to the elements we want to check with the function."
+        <br><br>
+        Okay I missed that. The importance of <span class='code-var'>num</span>. It was standing out there, but I didn't see it as relevant. So <span class='code-var'>num</span> needs to go inside the <span class='code-func'>for</span> loop I guess. What else? Wait, wait no....... I just tried something else! Haha, it was a syntax error. I didn't define the variable <span class='code-var'>i</span>. If I just add <span class='code-var'>let</span> to the if conditions, the output works! 
+        
+        <pre><code class="language-javascript">
+        function findElement(arr, func) {
+          for(let i=0; i&lt;arr.length; i++){
+            let test = func(arr[i]);  
+            if(test==true){
+              return arr[i];
+            } else {
+              return null;
+            }
+          } 
+          let num = 0;
+          return num;
+        }
+        
+        findElement([1, 2, 3, 4], num => num % 2 === 0);
+        </pre></code>
+        
+        So now that I am getting a true or false output for each element in the array, all that's left to do is check if the first true condition is met. If so, return that element, else if the <span class='code-func'>for</span> loop reaches the length of the array, return null.
+        <br><br>
+        But I've come to the same problem as with a previous exercise: I don't know how to check if the <span class='code-func'>for</span> loop is at the end of the array. I faced this problem when I had to find the largest number in an array, but it seems that I <em>can</em> actually use <span class='code-var'>arr[i].length</span> to check if the loop has finished. I just thought that this would perhaps be testing the length of a single element in an array. Anyway, let's give it a go.
+        
+        <pre><code class="language-javascript">
+        function findElement(arr, func) {
+          for(let i=0; i&lt;arr.length; i++){
+            let test = func(arr[i]);  
+            if(test==true){
+              return arr[i];
+            } else if (arr[i]==arr.length){
+              return null;
+            }
+          } 
+          let num = 0;
+        }
+        
+        findElement([1, 3, 5, 9], num => num % 2 === 0);
+        </pre></code>
+        Yup, that did the trick! Onward ho!
+      </section>
+    </article>
+    <section>
+      <article>
+        <header class='main-section' id='check_boolean_literals'>Checking for Boolean Literals</header>
+        So the premise is simple: "Check if a value is classified as a boolean primitive. Return true or false."
+        Well, a boolean is true or false... so write an if statement that checks if the input is true or false, and return true if it is. else, return false.
+        
+        <br><br><pre><code class="language-javascript">
+        function booWho(bool) {
+          if(bool == true || bool == false){
+            return true;
+          } else {
+            return false;
+          }
+          return bool;
+        }
+        
+        booWho(null);
         </code></pre><br><br>
         
-        So close now! This returns the correct array for most inputs, but if the inputs are negative 
-        numbers it fails because the <span class='code-bit-func'>if</span>  statement is comparing to 0. 
+        This passed most of the tests, but I forgot that there are other values that register as a boolean true or false. The function should recognise 1 and 0 as non-boolean since we are looking for boolean literals. I can't think of any other instances where an input would be recognised as boolean apart from this, so I will just account for 1 and 0 in my if statement.
         <br><br>
-        Ideally, instead of comparing the 
-        element in the sub-array at [i][j] to a standalone variable outside the loop, I would compare 
-        it to the last number that has just been passed so that the reference for size is not fixed at 
-        0 to begin with. But this seems quite beyond me at this point in time and I think its time to 
-        move on so I will just set <span class='code-bit-var'>num</span> to a very low negative number. That should take care of the 
-        problem, but is a cop-out for sure. I hope to return to this problem one day better-equipped 
-        to truly solve it.
+        Had to play around with this for a while because it was difficult to get the syntax right for the if statetent. I'm sure there must be a more succinct waheto write this, but anyway here is the new  if condition: 
+        
+        <br><br><pre><code class="language-javascript">
+        if((bool == true || bool == false) && (bool !== 1) && (bool != 0))
+        </code></pre><br><br>
+        
+        I was confident that that would be it, but now I am faced with the strange issue, that false is returning false. I have tried playing around with the if condition to correct this, but I can't figure it out. The best thing I can think of is to create a nested if statement where the outer statement first checks that bool is not 1 or 0, and then checks if it is a boolean value.
+        
+        <br><br><pre><code class="language-javascript">
+        
+        function booWho(bool) {
+          if(bool !== 1 && bool !== 0){
+            if(bool == false || bool == true){
+              return true;
+            }
+          } else {
+          return false;
+          }
+        }
+        
+        console.log(booWho(false));
+
+        </code></pre><br><br>
+        When I sat down to begin this problem, I thought it was the easiest one so far, but I guess booleans can get messy. I tried it this way, but it passes even fewer tests than before since it's now rejecting arrays that contain a 1. I know I've read about this before, but I can't remember where. I'm off to peruse the web...
+        <br><br>
+        According to <a href='https://www.w3schools.com/JS/js_booleans.asp'>w3schools</a>, in javascript "everything with a value is true" and "everything without a value is false." That seems important... but how to use that information? How do I get the function to distinguish between the boolean literal truth and all the other kinds of truth? 
+        <br><br>
+        Maybe I could use the stricter equivalence of === to verify the value of bool...
+        <br><br>
+        YEP! Bingo bango! Job's a good 'un.
+        <br><br>
+        Turns out it <em>was</em> very simple, it just required some rudimentary knowledge of operators. #feelsgoodman
       </article>
     </section>
-    <section id="4_The_Dynamic_Conception_of_Jazz" class="main-section">
-      <header>4 The Dynamic Conception of Jazz</header>
+    <section>
       <article>
-            article
-      </article>
-    </section>
-    <section id="Bibliography" class="main-section">
-      <header>Bibliography</header>
-      <article>
-        <ul style="list-style: none; line-height: 2em;"></ul>
+        <header class='main-section' id='title_case_sentence'>Title Case a Sentence</header>
+        Task: take a string of any combination of upper and lower case letters and change the first letter of each word to upper-case.
+    <br><br>
+Again, my first thought is to smash the string into a two-dimensional array and start trying to manipulate it through for loops, but there must surely be a simpler way using string methods. I there was one called toUpperCase(). So maybe I can split() the string at the spaces... that would make an array though. It's probably the case that dealing with arrays is inevitable here. Once I have an array I suppose I can use the indexOf() method to look for the first letter in each string in the array and then change it toUpperCase(). Let's see how that pans out.
+<br><br>
+Okay, so I can't use indexOf(). I forgot that it does the opposite of what I need. It returns the index of a  given string, not the string at a given index. But I've had a search and it seems there is a method called charAt() which does what I need. 
+
+<br><br><pre><code class="language-javascript">
+function titleCase(str) {
+  let arr = str.split(' ');
+  for(let i = 0; i>arr.length; i++){
+    arr[i].charAt(0).toUpperCase()
+  }
+  str = arr.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+</pre></code><br><br>
+
+Okay so some parts of this are working, but at least one thing isn't. If I feed the line arr[0].charAt(0).toUpperCase() to the console, it returns what I expected it to. Perhaps the problem is that this doesn't actually alter the strings in the array. Can I use push()? Seems unlikely, but I'll try. 
+<br><br>
+push() doesn't seem to be doing anything at all no matter what I try to push from within the for loop. Weird.
+<br><br>
+Played around with a bunch of stuff and am still scratching my head! So what do I _know_ is working?
+Well split() is definitely creating a comma separated array, and join is definitely putting the string back together again correctly. So the problem is with the for loop. But syntactically it seems fine! I also don't understand why it's not possible to put a console.log() within the for loop AND whatever I put in the for loops seems to have no impact whatsoever on the array.
+<br><br>
+On the MDN pages it gives an example of a for loop and then uses console.log() to display the value of i as the loop iterates! So whaaaaat's going on? A simple syntax error? 
+<br><br>
+Okay, I have a clue. The for loop does everything it is supposed to and all logs are correct if I just change the exit condition to a fixed number. So there's a problem with using arr.length as the exit condition for the loop, but why? I've used array.length in several exercises before and have not experienced this problem. 
+<br><br>
+I swapped arr.length for str.length and that seems to have fixed the function, but still does not explain why I was having this problem. Anyway, onwards!
+<br><br>
+If I do this within the loop:
+
+<br><br><pre><code class="language-javascript"></code>
+console.log(arr[i].charAt(0).toUpperCase())
+</pre></code><br><br>
+
+It returns the first letter of each string in the array in upper case. Cool, but not what I need. I found another string method called setCharAt(), but this doesn't accept toUpperCase() as a parameter. I can imagine that there are many ways to solve this, but the one that occurs to me now is to use the above method to create a new array of capital letters and then create a new for loop that will use the setCharAt() method to change the set the first letter of each string.
+<br><br>
+Ooo0okay... according to the debug console setCharAt() is not a valid method. I think I was looking at Java, not Javascript. But there is a method called substr() which I could possibly use.
+<br><br>
+I was starting to think of all these crazy possibilities, my mind was going wild trying to figure this out. The more I thought about it, the more complex my thoughts became until I was convinced that this problem was totally beyond my grasp-- that it was overwhelmingly deep. But then I did this:
+
+<br><br><pre><code class="language-javascript">
+
+function titleCase(str) {
+  let lstr = str.toLowerCase();
+  let arr = lstr.split(' ');
+  let capArr = [];
+  let restArr = [];
+  let newArr = [];
+  for(let i = 0; i &lt; arr.length; i++) {
+     		capArr.push(arr[i].substr(0,1).toUpperCase());
+     		restArr.push(arr[i].substr(1,arr[i].length))
+     		newArr[i] = capArr[i]+restArr[i];
+	}
+	return newArr.join(' ')
+}
+
+titleCase("I'm a little tea pot");
+</pre></code><br><br>
+I wish I had written out the steps to that final solution, but I got into a flow. I'm not really sure how it came about. Anyway...
+<br><br>
+<b>Winner!</b>
       </article>
     </section>
   </main>
